@@ -27,6 +27,10 @@
     $password = sanitzeFormPassword($_POST['password']);
     $password2 = sanitzeFormPassword($_POST['password2']);
 
-    $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
+    $wasSuccessful = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
+
+    if ($wasSuccessful == true) {
+      header("Location: index.php");
+    }
   }
 ?>
