@@ -31,6 +31,7 @@
 
     if ($wasSuccessful == true) {
       header("Location: index.php");
+      $_SESSION['userLoggedin'] = $username;
     }
   }
 ?>

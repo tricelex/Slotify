@@ -1,7 +1,8 @@
 <?php
+  include('includes/config.php');
   include('includes/classes/Account.php');
   include('includes/classes/Constants.php');
-  $account = new Account();
+  $account = new Account($con);
   include('includes/handlers/regster-handler.php');
   include('includes/handlers/login-handler.php');
 
@@ -21,6 +22,8 @@
       <form id="loginForm" action="register.php" method="POST">
         <h2>Login to your account</h2>
         <p>
+            <?php echo $account->getError(Constants::$usernameCharacters); ?>
+
           <label for="loginUsername">Username</label>
           <input id="loginUsername" name="loginUsername" type="text" placeholder="e.g Chuckz" required>
         </p>
@@ -36,11 +39,12 @@
         <h2>Create to your account</h2>
         <p>
             <?php echo $account->getError(Constants::$usernameCharacters); ?>
+            <?php echo $account->getError(Constants::$usernameTaken); ?>
           <label for="username">Username</label>
           <input id="username" name="username" type="text" placeholder="e.g KingChuckz" value="<?php getInput('username'); ?>" required>
         </p>
         <p>
-            <?php echo $account->getError(Constants::$frstNameCharacters); ?>
+            <?php echo $account->getError(Constants::$firstNameCharacters); ?>
           <label for="firstName">First Name</label>
           <input id="firstName" name="firstName" type="text" placeholder="e.g Chuckz" value="<?php getInput('firstName'); ?>" required>
         </p>
@@ -52,6 +56,7 @@
         <p>
             <?php echo $account->getError(Constants::$emailDoNotMatch); ?>
             <?php echo $account->getError(Constants::$emailInvalid); ?>
+            <?php echo $account->getError(Constants::$emailTaken); ?>
           <label for="email">Email</label>
           <input id="email" name="email" type="text" placeholder="e.g Chuckz@gmail.com" value="<?php getInput('email'); ?>" required>
         </p>
