@@ -32,8 +32,8 @@
         } else {
           echo "<script>
           $(document).ready(function () {
-            $('#loginForm').hide();
-            $('#registerForm').show();
+            $('#loginForm').show();
+            $('#registerForm').hide();
           });
           </script>";
         }
@@ -47,11 +47,11 @@
             <p>
                 <?php echo $account->getError(Constants::$loginFailed); ?>
               <label for="loginUsername">Username</label>
-              <input id="loginUsername" name="loginUsername" type="text" placeholder="e.g Chuckz" required>
+              <input id="loginUsername" name="loginUsername" type="text" placeholder="e.g Chuckz" value="<?php getInput('loginUsername'); ?>" required>
             </p>
             <p>
               <label for="loginPassword">Password</label>
-              <input id="loginPassword" name="loginPassword" type="password" placeholder="Your Password" required>
+              <input id="loginPassword" name="loginPassword" type="password" placeholder="Your Password" value="<?php getInput('loginPassword'); ?>" required>
             </p>
             <button type="submit" name="loginButton">LOGIN </button>
             <div class="hasAccountText">
@@ -108,8 +108,8 @@
           </form>
         </div>
 
-        <div id="oginText">
-          <h1>Get Great Music , Right Now!</h1>
+        <div id="loginText">
+          <h1>Get Great Music, Right Now!</h1>
           <h2>Listen to loads of songs for free</h2>
           <ul>
             <li>Discover music you'll fall in love with</li>
