@@ -15,7 +15,6 @@
       $query = mysqli_query($this->con, "SELECT * FROM  users WHERE username = '$un' AND password = '$pw'");
 
       if (mysqli_num_rows($query) == 1) {
-
         return true;
       } else {
         array_push($this->errorArray, Constants::$loginFailed);
@@ -69,7 +68,7 @@
 
     private function validateFirstName($fn) {
       if (strlen($fn) > 25 || strlen($fn) < 5) {
-        array_push($this->errorArray, Constants::$frstNameCharacters);
+        array_push($this->errorArray, Constants::$firstNameCharacters);
         return;
       }
     }

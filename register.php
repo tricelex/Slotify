@@ -17,8 +17,28 @@
   <head>
     <title>Welcome to Slotify</title>
     <link rel="stylesheet" type="text/css" href="assets/css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/js/register.js"></script>
   </head>
   <body>
+      <?php
+        if (isset($_POST['registerButton'])) {
+          echo "<script>
+          $(document).ready(function () {
+            $('#loginForm').hide();
+            $('#registerForm').show();
+          });
+          </script>";
+        } else {
+          echo "<script>
+          $(document).ready(function () {
+            $('#loginForm').hide();
+            $('#registerForm').show();
+          });
+          </script>";
+        }
+      ?>
+
     <div id="background">
       <div id="loginContainer">
         <div id="inputContainer">
@@ -34,6 +54,9 @@
               <input id="loginPassword" name="loginPassword" type="password" placeholder="Your Password" required>
             </p>
             <button type="submit" name="loginButton">LOGIN </button>
+            <div class="hasAccountText">
+              <span id="hideLogin">Don't have an account yet? Signup here</span>
+            </div>
           </form>
 
 
@@ -60,11 +83,11 @@
                 <?php echo $account->getError(Constants::$emailInvalid); ?>
                 <?php echo $account->getError(Constants::$emailTaken); ?>
               <label for="email">Email</label>
-              <input id="email" name="email" type="text" placeholder="e.g Chuckz@gmail.com" value="<?php getInput('email'); ?>" required>
+              <input id="email" name="email" type="email" placeholder="e.g Chuckz@gmail.com" value="<?php getInput('email'); ?>" required>
             </p>
             <p>
               <label for="email2">Confirm Email</label>
-              <input id="email2" name="email2" type="text" placeholder="e.g Chuckz@gmail.com" value="<?php getInput('email2'); ?>" required>
+              <input id="email2" name="email2" type="email" placeholder="e.g Chuckz@gmail.com" value="<?php getInput('email2'); ?>" required>
             </p>
             <p>
                 <?php echo $account->getError(Constants::$passwordsDoNotMatch); ?>
@@ -79,7 +102,20 @@
               <input id="password2" name="password2" type="password" placeholder="Confirm Your Password" required>
             </p>
             <button type="submit" name="registerButton">SIGN UP</button>
+            <div class="hasAccountText">
+              <span id="hideRegister">Already have an account yet? Login here.</span>
+            </div>
           </form>
+        </div>
+
+        <div id="oginText">
+          <h1>Get Great Music , Right Now!</h1>
+          <h2>Listen to loads of songs for free</h2>
+          <ul>
+            <li>Discover music you'll fall in love with</li>
+            <li>Create your playlist</li>
+            <li>Follow artist to keep up to date</li>
+          </ul>
         </div>
       </div>
 
