@@ -128,7 +128,7 @@ html, body {
     font-size: 20px;
     list-style-type: none;
     padding: 5px 30px;
-    background: url(../images/bg.jpg) no-repeat;
+    background: url(../images/icons/checkmark.png) no-repeat;
 }
 
 #inputContainer .errorMessage {
