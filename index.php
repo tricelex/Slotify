@@ -23,7 +23,7 @@
         <div id="nowPlayingLeft">
           <div class="content">
             <span class="albumLink">
-              <img src="assets/images/profile-pics/head_emerald.png" width="25" height="25" alt="head_emerald"/>
+              <img class="albumArtwork" src="https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"/>
             </span>
             <div class="trackInfo">
               <span class="trackName">
@@ -71,7 +71,16 @@
         </div>
 
         <div id="nowPlayingRight">
-
+          <div class="volumeBar">
+            <button class="controlButton volume" title="Volume Button">
+              <img src="assets/images/icons/volume.png" alt="Volume ">
+            </button>
+            <div class="progressBar">
+              <div class="progressBarBg">
+                <div class="progress"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
