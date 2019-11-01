@@ -3,4 +3,9 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="PhpEntryPointsManager">
+    <entry_point>
+      <entry_point TYPE="phpFunction" FQNAME="\sanitzeFormString" />
+    </entry_point>
+  </component>
 </project>
