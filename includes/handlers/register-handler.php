@@ -2,13 +2,13 @@
 
   function sanitizeFormUsername($inputText) {
     $inputText = strip_tags($inputText);
-    $inputText = str_replace("", "", $inputText);
+    $inputText = str_replace( '', '', $inputText);
     return $inputText;
   }
 
   function sanitizeFormString($inputText) {
     $inputText = strip_tags($inputText);
-    $inputText = str_replace("", "", $inputText);
+    $inputText = str_replace( '', '', $inputText);
     $inputText = ucfirst(strtolower($inputText));
     return $inputText;
   }
@@ -31,6 +31,6 @@
 
     if ($wasSuccessful == true) {
       $_SESSION['userLoggedin'] = $username;
-      header("Location: index.php");
+      header( 'Location: index.php' );
     }
   }

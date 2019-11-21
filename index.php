@@ -1,13 +1,13 @@
 <?php
-	include 'includes/config.php';
-	  session_destroy();
+include 'includes/config.php';
+session_destroy();
 
-	if ( isset( $_SESSION['userLoggedIn'] ) ) {
-		$userLoggedin = $_SESSION['userLoggedIn'];
-	} else {
+if ( isset( $_SESSION['userLoggedIn'] ) ) {
+	$userLoggedin = $_SESSION['userLoggedIn'];
+} else {
 
-		header( "Location: register.php" );
-	}
+	//		header( "Location: register.php" );
+}
 ?>
 
 <html>
@@ -19,9 +19,9 @@
 <body>
 <div class="mainContainer">
 	<div id="topContainer">
-		<?php include( "includes/navBarContainer.php" ) ?>
+		<?php include( 'includes/navBarContainer.php' ) ?>
 	</div>
-	<?php include( "includes/nowPlayingBar.php" ) ?>
+	<?php include( 'includes/nowPlayingBar.php' ) ?>
 
 
 </div>
